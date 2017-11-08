@@ -10,15 +10,16 @@ Stack.prototype.push = function(val) {
 Stack.prototype.pop = function() {
   // temp array to contain stack frames without separator
   var arr = this.storage.split("---");
-  // remove the last stack frame
-  arr.splice([arr.length - 1]);
+  // remove the last stack frame and save it into popped to return
+  var popped = arr.splice([arr.length - 1]);
   // reassign storage with updated stack frames with separator
   this.storage = arr.join("---");
+
+  return popped;
 };
 
 Stack.prototype.size = function() {
   var size =
-    //
     this.storage === ""
       ? // simply return 0 if storage is empty
         0
