@@ -22,7 +22,7 @@ Stack.prototype.size = function() {
     this.storage === ""
       ? // simply return 0 if storage is empty
         0
-      : // expose stack frames without seperator, filtering out any unnecessary data e.g trim();
+      : // expose stack frames without seperator, filtering out any unnecessary data like trim() but with an array
         // and assign its length to variable
         this.storage.split("---").filter(val => val !== "").length;
   return size;
